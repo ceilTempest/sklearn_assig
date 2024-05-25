@@ -1,0 +1,19 @@
+import cv2
+
+model = cv2.dnn_DetectionModel("path/to/model.weights", "path/to/model.cfg")
+
+
+img = cv2.VideoCapture(0) # For camera
+# img = cv2.imread("image.jpg")  # For loaded image
+
+# Read the frame from camera
+ret, frame = img
+classes, confidences, boxes = model.detect(frame)
+
+
+objects = []
+for (class_id, confidence, box) in zip(classes.flatten(), confidences.flatten(), boxes):
+  objects.append(cv2.dnn_DetectionModel.objectsNames[class_id])
+
+
+img.release()
