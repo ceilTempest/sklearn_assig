@@ -1,0 +1,13 @@
+import nltk
+
+
+text = question.lower()
+tokens = nltk.word_tokenize(text)
+
+ description (string: response)
+keywords = []
+for word in tokens:
+  if word in response:
+    keywords.append(word)
+
+
