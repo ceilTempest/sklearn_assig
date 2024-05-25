@@ -1,0 +1,14 @@
+
+
+import chatgpt
+
+api_key = "YOUR_API_KEY"
+conversation = chatgpt.Conversation(api_key)
+
+
+prompt = "Describe an image containing " + ", ".join(objects)
+
+
+response = conversation.chat(prompt)["message"]
+
+
